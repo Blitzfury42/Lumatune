@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000810" />
+    <meta name="description" content="LumaTune — Synthétiseur Musical Web interactif" />
+    <title>LumaTune 🎵</title>
+    <style>
+      /* ===== RESET ===== */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      /* ===== BASE ===== */
+      body {
+        background: #000810;
+        color: #e0eeff;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      /* ===== SCROLLBAR ===== */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #0a1628; }
+      ::-webkit-scrollbar-thumb { background: #0088ff; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #00aaff; }
+
+      /* ===== SELECTION ===== */
+      ::selection { background: rgba(0, 136, 255, 0.4); color: #e0eeff; }
+
+      /* ===== ANIMATIONS ===== */
+      @keyframes lumatune-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(0.97); }
+      }
+
+      @keyframes lumatune-float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+      }
+
+      @keyframes lumatune-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(0, 136, 255, 0.4); }
+        50% { box-shadow: 0 0 40px rgba(0, 170, 255, 0.8), 0 0 80px rgba(0, 200, 255, 0.3); }
+      }
+
+      @keyframes lumatune-shimmer {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+
+      @keyframes lumatune-fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes lumatune-slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes lumatune-ripple {
+        0% { transform: scale(0); opacity: 1; }
+        100% { transform: scale(4); opacity: 0; }
+      }
+
+      @keyframes lumatune-noteFloat {
+        0% { opacity: 1; transform: translateY(0) scale(1); }
+        100% { opacity: 0; transform: translateY(-60px) scale(0.5); }
+      }
+
+      @keyframes lumatune-particleRise {
+        0% { transform: translateY(100vh) scale(0); opacity: 0; }
+        10% { opacity: 0.8; }
+        90% { opacity: 0.3; }
+        100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+      }
+
+      @keyframes lumatune-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes lumatune-borderGlow {
+        0%, 100% { border-color: rgba(0, 136, 255, 0.3); }
+        50% { border-color: rgba(0, 200, 255, 0.8); }
+      }
+
+      @keyframes lumatune-dotPulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.5); opacity: 0.6; }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Vous devez activer JavaScript pour utiliser LumaTune.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
